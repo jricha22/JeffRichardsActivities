@@ -7,10 +7,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class DisplayMessageActivity extends AppCompatActivity {
+    public final static String FIRST_MESSAGE = "edu.westga.cs6242.jeffrichardsactivities.FIRST_MESSAGE";
+    public final static String SECOND_MESSAGE = "edu.westga.cs6242.jeffrichardsactivities.SECOND_MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +34,18 @@ public class DisplayMessageActivity extends AppCompatActivity {
         {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        TextView msgText = (TextView)findViewById(R.id.lblFirstMessage);
+        TextView msgText = (TextView)findViewById(R.id.lblInitialMessage);
         msgText.setText(getIntent().getStringExtra(MainActivity.EXTRA_MESSAGE));
     }
 
     public void onNext(View view) {
-        //Do nothing
+        Intent intent = new Intent(this, DisplayTwoMessagesActivity.class);
+        TextView firstMessage = (TextView) findViewById(R.id.lblInitialMessage);
+        String message1 = firstMessage.getText().toString();
+        intent.putExtra(FIRST_MESSAGE, message1);
+        EditText editText = (EditText) findViewById(R.id.txtSecondMessage);
+        String message = editText.getText().toString();
+        intent.putExtra(SECOND_MESSAGE, message);
+        startActivity(intent);
     }
 }

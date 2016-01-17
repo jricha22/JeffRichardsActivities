@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/lblFirstMessage"
+            android:id="@+id/lblInitialMessage"
             android:layout_weight="0" />
 
         <EditText

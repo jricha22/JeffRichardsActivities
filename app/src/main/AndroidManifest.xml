@@ -27,6 +27,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="edu.westga.cs6242.jeffrichardsactivities.MainActivity" />
         </activity>
+        <activity
+            android:name=".DisplayTwoMessagesActivity"
+            android:label="@string/title_activity_display_two_messages"
+            android:parentActivityName=".DisplayMessageActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.westga.cs6242.jeffrichardsactivities.DisplayMessageActivity" />
+        </activity>
     </application>
 
 </manifest>
